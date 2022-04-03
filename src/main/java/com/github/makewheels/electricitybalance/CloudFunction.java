@@ -2,7 +2,7 @@ package com.github.makewheels.electricitybalance;
 
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.http.HttpUtil;
-import com.alibaba.fastjson.JSON;
+import cn.hutool.json.XML;
 import com.alibaba.fastjson.JSONObject;
 import com.aliyun.fc.runtime.Context;
 import com.aliyun.fc.runtime.StreamRequestHandler;
@@ -33,5 +33,9 @@ public class CloudFunction implements StreamRequestHandler {
                 "http://82.157.172.71:5025/push/sendEmail",
                 body.toJSONString());
         System.out.println(response);
+    }
+
+    public static void main(String[] args) {
+        new CloudFunction().handleRequest(null, null, null);
     }
 }
