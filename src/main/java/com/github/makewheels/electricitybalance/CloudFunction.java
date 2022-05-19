@@ -70,7 +70,7 @@ public class CloudFunction implements StreamRequestHandler {
                 + getHistoryHtmlTable());
         //调用推送中心
         String response = HttpUtil.post(
-                "http://82.157.172.71:5025/push/sendEmail",
+                "http://push-center.java8.icu:5025/push/sendEmail",
                 body.toJSONString());
         System.out.println(response);
     }
